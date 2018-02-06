@@ -21,15 +21,15 @@ PKLot_path = "../../PKLot/PKLotSegmented"
 PKLot_resize_path = "../../PKLot_resize/"
 # Number of files in PKLotSegmeted.
 no_of_files = 695851
+temp_a = round(no_of_files/10)
+temp_b = round(temp_a/10)
 
 count = 0
-temp = 1
 for root, dirs, files in os.walk(PKLot_path):
         for name in files:
             count += 1
-            x = count/no_of_files
-            if x % 10 == 0:
-                x %= 10
+            if round(count % temp_a) == 0:
+                x = round(count/temp_b)
                 print(str(x) + "% completed...")
             img = Image.open(os.path.join(root, name))
             img = img.resize((56, 56))
