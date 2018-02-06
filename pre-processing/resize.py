@@ -18,7 +18,7 @@ import os
 # Parking Lot Image data path.
 PKLot_path = "../../PKLot/PKLotSegmented"
 # Parking Lot Image resized data path.
-PKLot_resize_path = "../../PKLot_resize"
+PKLot_resize_path = "../../PKLot_resize/"
 # Number of files in PKLotSegmeted.
 no_of_files = 695851
 
