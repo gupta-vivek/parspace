@@ -17,8 +17,12 @@ import os
 
 # Parking Lot Image data path.
 PKLot_path = "../../PKLot/PKLotSegmented"
+
 # Parking Lot Image resized data path.
 PKLot_resize_path = "../../PKLot_resize/"
+PKLot_resize_empty_path = "../../PKLot_resize/Empty/"
+PKLot_resize_occupied_path = "../../PKLot_resize/Occupied/"
+
 # Number of files in PKLotSegmeted.
 no_of_files = 695851
 temp_a = round(no_of_files/10)
@@ -26,6 +30,13 @@ temp_b = round(temp_a/10)
 
 count = 0
 for root, dirs, files in os.walk(PKLot_path):
+        print("Root - ", root.split('/')[-1])
+        print("Dirs - ", dirs)
+        print("Files - ", files)
+        if root.split('/')[-1] == "Empty":
+            PKLot_resize_path = PKLot_resize_empty_path
+        elif root.split('/')[-1] == "Occupied":
+            PKLot_resize_path = PKLot_resize_occupied_path
         for name in files:
             count += 1
             if round(count % temp_a) == 0:
