@@ -15,12 +15,22 @@ Sphinx Documentation Status:
 from PIL import Image
 import os
 
-
-PKLot_path = "../../PKLot"
+# Parking Lot Image data path.
+PKLot_path = "../../PKLot/PKLotSegmented"
+# Parking Lot Image resized data path.
 PKLot_resize_path = "../../PKLot_resize"
+# Number of files in PKLotSegmeted.
+no_of_files = 695851
 
+count = 0
+temp = 1
 for root, dirs, files in os.walk(PKLot_path):
         for name in files:
+            count += 1
+            x = count/no_of_files
+            if x % 10 == 0:
+                x %= 10
+                print(str(x) + "% completed...")
             img = Image.open(os.path.join(root, name))
             img = img.resize((56, 56))
             img.save(PKLot_resize_path + name, quality=100)
