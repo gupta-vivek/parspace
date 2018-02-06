@@ -30,9 +30,6 @@ temp_b = round(temp_a/10)
 
 count = 0
 for root, dirs, files in os.walk(PKLot_path):
-        print("Root - ", root.split('/')[-1])
-        print("Dirs - ", dirs)
-        print("Files - ", files)
         if root.split('/')[-1] == "Empty":
             PKLot_resize_path = PKLot_resize_empty_path
         elif root.split('/')[-1] == "Occupied":
