@@ -25,13 +25,13 @@ occupied_files = 337780
 
 def pickle_gen(data_path, label, no_of_files, save_path):
     count = 0
-    temp_a = round(no_of_files / 10)
-    temp_b = round(temp_a / 10)
+    temp_a = round(no_of_files / 100)
+    # temp_b = round(temp_a / 10)
     temp_array = []
-    for index, file in enumerate(os.listdir(data_path)):
+    for file in os.listdir(data_path):
         count += 1
         if round(count % temp_a) == 0:
-            x = round(count / temp_b)
+            x = round(count / temp_a)
             print(str(x) + "% completed...")
         img = Image.open(data_path + file)
         temp_array.append([img, [label]])
