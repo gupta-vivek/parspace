@@ -36,7 +36,7 @@ def pickle_gen(data_path, label, no_of_files, save_path):
         img = Image.open(data_path + file)
         temp_array.append([img, [label]])
 
-        fp = open(save_path, "w")
+        fp = open(save_path, "wb")
         pickle.dump(temp_array, fp)
         fp.close()
 
