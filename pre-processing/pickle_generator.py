@@ -37,7 +37,7 @@ def pickle_gen(data_path, label, no_of_files, save_path):
         temp_array.append([img, [label]])
 
         fp = open(save_path, "w")
-        pickle.dump(temp_array, fp)
+        pickle_generator.dump(temp_array, fp)
         fp.close()
 
 pickle_gen(empty_path, 0, empty_files, "../data/empty")
