@@ -33,7 +33,7 @@ def pickle_gen(data_path, label, no_of_files, save_path):
         if round(count % temp_a) == 0:
             x = round(count / temp_b)
             print(str(x) + "% completed...")
-        img = Image.open(cars_resize_path + file)
+        img = Image.open(data_path + file)
         temp_array.append([img, [label]])
 
         fp = open(save_path, "w")
@@ -41,4 +41,4 @@ def pickle_gen(data_path, label, no_of_files, save_path):
         fp.close()
 
 pickle_gen(empty_path, 0, empty_files, "../data/empty")
-pickle_gen(occupied_path, 0, occupied_files, "../data/occupied")
+pickle_gen(occupied_path, 1, occupied_files, "../data/occupied")
